@@ -50,9 +50,13 @@ pipeline {
             }
         }
 
-        stage('Aviatrix  Client Configs'){
-            input "Generate Aviatrix  Client Configs"
-            }
+
+        stage('Generate Aviatrix  Client Configs'){
+           timeout(time: 180, unit: 'MINUTES'){
+           input "Generate Aviatrix  Client Configs"
+           }
+       }
+
     }
 }
 
