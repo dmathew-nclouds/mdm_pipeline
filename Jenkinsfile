@@ -20,6 +20,7 @@ pipeline {
                     
                 }
             }
+        }
         stage('Run DR Post Setup') {
             parallel {
                 stage('MDM1 Post Setup') {
