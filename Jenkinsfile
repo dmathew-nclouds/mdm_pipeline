@@ -3,7 +3,7 @@
 pipeline {
     agent none
     stages {
-        stage('Run Tests') {
+        stage('Run DR Infra Setup') {
             parallel {
                 stage('MDM1 Infra Setup') {
                     
