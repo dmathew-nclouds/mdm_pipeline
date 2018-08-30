@@ -12,7 +12,7 @@ pipeline {
                     }
                     
                 }
-                stage('MDM1 2nfra Setup') {
+                stage('MDM1 Infra Setup') {
                     
                     steps {
                         echo "MDM2 Infrastructure Terraform Setup "
