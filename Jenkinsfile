@@ -39,6 +39,11 @@ pipeline {
                 }
             }
         }
+        stage('DNS Update') {
+            steps {
+                echo 'DNS update for DR region'
+            }
+        }
     }
 }
 
