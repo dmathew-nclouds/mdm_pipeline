@@ -5,31 +5,19 @@ pipeline {
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
-                    agent {
-                        label "windows"
-                    }
+                stage('MDM1 Infra Setup') {
+                    
                     steps {
-                        bat "run-tests.bat"
+                        echo "MDM1 Infrastructure Terraform Setup "
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
+                    
                 }
-                stage('Test On Linux') {
-                    agent {
-                        label "linux"
-                    }
+                stage('MDM1 2nfra Setup') {
+                    
                     steps {
-                        sh "run-tests.sh"
+                        echo "MDM2 Infrastructure Terraform Setup "
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
+                    
                 }
             }
         }
