@@ -20,6 +20,23 @@ pipeline {
                     
                 }
             }
+        stage('Run DR Post Setup') {
+            parallel {
+                stage('MDM1 Post Setup') {
+                    
+                    steps {
+                        echo "MDM1 Chef Post  Setup "
+                    }
+                    
+                }
+                stage('MDM2 Post Setup') {
+                    
+                    steps {
+                        echo "MDM2 Chef Post  Setup "
+                    }
+                    
+                }
+            }
         }
     }
 }
